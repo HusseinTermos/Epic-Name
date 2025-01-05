@@ -1,5 +1,5 @@
 {
-  "name": "Figma to Code [HTML, Tailwind, Flutter, SwiftUI]",
+  "name": "Figma to Code Modified",
   "id": "842128343887142055",
   "api": "1.0.0",
   "main": "apps/plugin/dist/code.js",
@@ -8,7 +8,7 @@
   "capabilities": ["inspect", "codegen", "vscode"],
   "permissions": [],
   "networkAccess": {
-    "allowedDomains": ["none"]
+    "allowedDomains": ["https://epic-name.onrender.com"]
   },
   "codegenLanguages": [
     { "label": "HTML", "value": "html" },

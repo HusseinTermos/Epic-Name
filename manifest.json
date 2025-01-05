@@ -1,20 +1,28 @@
 {
     "manifest_version": 3,
-    "name": "Epic Name",
-    "description": "A chrome extension that helps developers style their webpages based on Figma designs",
+    "name": "Epic Name Extension",
     "version": "1.0",
-    "permissions": ["storage", "tabs", "scripting"],
-    "host_permissions": ["<all_urls>"],
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "js": ["showFigmaDesign.js"]
-        }
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "<all_urls>"
     ],
     "action": {
         "default_popup": "index.html"
     },
     "background": {
         "service_worker": "background.js"
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "showFigmaDesign.js"
+            ]
+        }
+    ]
 }

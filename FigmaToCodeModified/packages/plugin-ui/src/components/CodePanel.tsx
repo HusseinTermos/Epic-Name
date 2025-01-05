@@ -48,6 +48,7 @@ const CodePanel = (props: CodePanelProps) => {
   );
   
   // Send code to API endpoint when it changes
+  console.log("reached ehre");
   useEffect(() => {
     if (!isEmpty) {
       const sendCodeToAPI = async () => {
