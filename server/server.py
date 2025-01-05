@@ -48,7 +48,7 @@ def home():
         return jsonify({"error": "Data not found"}), 404
 
     return jsonify({
-        "name": "some_name",
+        "name": "1",
         "payload": row['payload']  # Automatically parsed from JSONB
     }), 200
 

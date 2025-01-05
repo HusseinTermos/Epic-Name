@@ -1,0 +1,41 @@
+{
+  "name": "plugin",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm run build:ui && pnpm run build:main --minify --tree-shaking=true",
+    "build:main": "esbuild plugin-src/code.ts --bundle --target=ES6 --outfile=dist/code.js",
+    "build:ui": "vite build --minify esbuild --emptyOutDir=false",
+    "build:watch": "concurrently -n backend,ui \"pnpm run build:main --watch\" \"pnpm run build:ui --watch\"",
+    "dev": "pnpm build:watch"
+  },
+  "dependencies": {
+    "@figma/plugin-typings": "^1.105.0",
+    "backend": "workspace:*",
+    "plugin-ui": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.23.1",
+    "eslint-config-custom": "workspace:*",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "postcss": "^8.4.49",
+    "tailwindcss": "3.4.6",
+    "tsconfig": "workspace:*",
+    "typescript": "^5.7.2",
+    "types": "workspace:*",
+    "vite": "^5.4.11",
+    "vite-plugin-singlefile": "^2.1.0"
+  }
+}
