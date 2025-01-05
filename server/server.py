@@ -2,10 +2,10 @@ from flask import Flask, request, jsonify
 import psycopg2
 import psycopg2.extras
 import json
-import os
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS"], "allow_headers": ["*"]}})
 # PostgreSQL connection details
 DATABASE_URL = "postgresql://admin:NCv9fSOVeKP0YbknvPisdctwTG5KTtYY@dpg-ctt37f9opnds73c993j0-a.oregon-postgres.render.com/epic_name_db"
 
